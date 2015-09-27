@@ -27,5 +27,5 @@ jstring
 Java_com_example_hellojni_HelloJni_stringFromJNI( JNIEnv* env,
                                                   jobject thiz )
 {
-    return (*env)->NewStringUTF(env, "Hello how goes it!!");
+    return (*env)->NewStringUTF(env, "Hello how goes it!? ..from JNI");
 }
