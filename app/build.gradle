@@ -1,8 +1,8 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 18
-    buildToolsVersion "18.1.1"
+    compileSdkVersion 19
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
         minSdkVersion 3
@@ -11,16 +11,16 @@ android {
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
 }
 
 dependencies {
-//    compile project(':main')
-    compile fileTree(dir: '../main/libs', include: '*.jar')
-    compile fileTree(dir: '../thirdparty/actionbar-sherlock/library/libs', include: '*.jar')
+    //    compile project(':main')
+    compile fileTree(include: '*.jar', dir: '../main/libs')
+    compile fileTree(include: '*.jar', dir: '../thirdparty/actionbar-sherlock/library/libs')
 }
 
 task copyNativeLibs(type: Copy) {
